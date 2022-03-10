@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a28189a3c867216d268ad39f12bb8cd8",
+    "revision": "355389d24fcb2aad07fc755570924bb1",
     "url": "/bomb-dashboard-prajjwaljogdand/index.html"
   },
   {
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bomb-dashboard-prajjwaljogdand/static/js/12.4a8f71b2.chunk.js"
   },
   {
-    "revision": "280c399abf5e5c8e3dee",
-    "url": "/bomb-dashboard-prajjwaljogdand/static/js/13.e288a9dc.chunk.js"
+    "revision": "e93e6eaa455311f0583f",
+    "url": "/bomb-dashboard-prajjwaljogdand/static/js/13.595aea91.chunk.js"
   },
   {
     "revision": "8aafe9c450fe2648bda1",
@@ -160,8 +160,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bomb-dashboard-prajjwaljogdand/static/js/main.24af0e94.chunk.js"
   },
   {
-    "revision": "efb81d948f11b809b4bf",
-    "url": "/bomb-dashboard-prajjwaljogdand/static/js/runtime-main.2c91aabc.js"
+    "revision": "c115c8d62953d21dbf40",
+    "url": "/bomb-dashboard-prajjwaljogdand/static/js/runtime-main.d51f17cc.js"
   },
   {
     "revision": "3761c6a5e09a70682a2debdf67997375",

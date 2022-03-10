@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/bomb-dashboard-prajjwaljogdand/precache-manifest.1912f5fd7b18abc8bc954fe26e43297f.js"
+  "/bomb-dashboard-prajjwaljogdand/precache-manifest.4f5da25b0e80057449503f3363f135dd.js"
 );
 
 self.addEventListener('message', (event) => {
