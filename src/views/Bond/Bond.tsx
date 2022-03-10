@@ -18,11 +18,10 @@ import useTokenBalance from '../../hooks/useTokenBalance';
 import useBondsPurchasable from '../../hooks/useBondsPurchasable';
 import {getDisplayBalance} from '../../utils/formatBalance';
 import { BOND_REDEEM_PRICE, BOND_REDEEM_PRICE_BN } from '../../bomb-finance/constants';
-import { Alert } from '@material-ui/lab';
+
 
 
 import HomeImage from '../../assets/img/background.jpg';
-import { Grid, Box } from '@material-ui/core';
 import { Helmet } from 'react-helmet';
 
 const BackgroundImage = createGlobalStyle`
@@ -67,7 +66,7 @@ const Bond: React.FC = () => {
   );
   const isBondRedeemable = useMemo(() => cashPrice.gt(BOND_REDEEM_PRICE_BN), [cashPrice]);
   const isBondPurchasable = useMemo(() => Number(bondStat?.tokenInFtm) < 1.01, [bondStat]);
-  const isBondPayingPremium = useMemo(() => Number(bondStat?.tokenInFtm) >= 1.1, [bondStat]);
+  
 // console.log("bondstat", Number(bondStat?.tokenInFtm))
   const bondScale = (Number(cashPrice) / 100000000000000).toFixed(4); 
 
