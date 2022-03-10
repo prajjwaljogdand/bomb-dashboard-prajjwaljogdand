@@ -83,7 +83,7 @@ const Bond: React.FC = () => {
             <Route exact path={path}>
               <PageHeader icon={'💣'} title="Buy &amp; Redeem Bonds" subtitle="Earn premiums upon redemption" />
             </Route>
-            {isBondPayingPremium === false ? (
+            {/* {isBondPayingPremium === false ? (
 
 
               <Box mt={5}>
@@ -95,7 +95,7 @@ const Bond: React.FC = () => {
             
               </Grid>
               </Box>
-            ) : <></>}
+            ) : <></>} */}
           
             <StyledBond>
               <StyledCardWrapper>
