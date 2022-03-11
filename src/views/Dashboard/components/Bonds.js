@@ -15,7 +15,11 @@ import { getDisplayBalance } from '../../../utils/formatBalance';
 import { BOND_REDEEM_PRICE, BOND_REDEEM_PRICE_BN } from '../../../bomb-finance/constants';
 import BondAction from './BondAction';
 import TokenSymbol from '../../../components/TokenSymbol';
+
+
+
 const Bonds = () => {
+
   const { account } = useWallet();
   const bombFinance = useBombFinance();
   const addTransaction = useTransactionAdder();
@@ -49,6 +53,7 @@ const Bonds = () => {
   return (
     <div>
       <BackgroundImage />
+
       {!!account ? (
         <StyledBond>
           <Box sx={{ flexGrow: 1 }}>
@@ -76,6 +81,8 @@ const Bonds = () => {
                   </Grid>
                 </Grid>
                 <Grid pt={4} item md={5} container spacing={2}>
+
+                  {/* Purchase */}
                   <Grid item container md={12} spacing={2}>
                     <Grid item md={6}>
                       <SubTitle>
@@ -98,6 +105,8 @@ const Bonds = () => {
                       disabled={!bondStat || isBondRedeemable}
                     />
                   </Grid>
+
+                  {/* Redeem */}
                   <Grid item container md={12} spacing={2}>
                     <Grid item md={6}>
                       <SubTitle>Redeem Bomb</SubTitle>
@@ -117,6 +126,7 @@ const Bonds = () => {
                       }
                     />
                   </Grid>
+                  
                 </Grid>
               </Grid>
             </StyledPaper>
@@ -125,6 +135,7 @@ const Bonds = () => {
       ) : (
         <UnlockWallet />
       )}
+
     </div>
   );
 };

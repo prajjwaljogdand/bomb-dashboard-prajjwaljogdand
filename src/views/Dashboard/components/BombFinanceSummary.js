@@ -3,22 +3,27 @@ import React from 'react';
 import DataTable from './DataTable';
 import styled from 'styled-components';
 import EpochData from './EpochData';
-function BombFinanceSummary() {
+const BombFinanceSummary = ()=> {
+
   return (
     <StyledPaper>
+      <div style={{ textAlign: 'center', borderBottom: '0.5px solid grey', paddingBottom: '10px' }}>
+        Bomb Finance Summary
+      </div>
       <Grid container spacing={2}>
-        <Grid item>
+        <Grid item md={8}>
           <DataTable />
         </Grid>
-        <Grid item><EpochData />  </Grid>
-        <Grid item>Graph</Grid>
+        <Grid item md={4}>
+          <EpochData />
+        </Grid>
       </Grid>
     </StyledPaper>
   );
+  
 }
 const StyledPaper = styled.div`
   width: 100%;
-  display: flex;
   background: rgba(35, 40, 75, 0.75);
   border: 1px solid #728cdf;
   box-sizing: border-box;
@@ -26,7 +31,7 @@ const StyledPaper = styled.div`
   border-radius: 10px;
   color: white;
   padding: 20px;
-  margin-bottom :  10px;
+  margin-bottom: 10px;
 `;
 
 export default BombFinanceSummary;

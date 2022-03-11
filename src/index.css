@@ -16,6 +16,7 @@ h4 {
 html,
 body {
   overflow-y: auto;
+  overflow-x: hidden;
   height: 100%;
 }
 
@@ -107,31 +108,35 @@ code {
 
 .newShinyButton {
   margin-top: 5px;
+  margin-left: 5p !important;
+  margin-right: 5px !important;
   padding: 4px 10px 4px 15px;
   border: 1px solid #ffffff !important;
   box-sizing: border-box;
   border-radius: 50px !important;
-  width : 320px;
+  width: 320px;
   color: white !important;
   font-family: 'Nunito';
   font-style: normal;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 12px !important;
   line-height: 20px;
 }
 .newShinyButtonDisabled {
   margin-top: 5px;
   padding: 4px 10px 4px 15px;
-  border: 1px solid #ffffff !important;
+  border: 1px solid grey !important;
   box-sizing: border-box;
   border-radius: 50px !important;
-  width : 240px;
+  width: 240px;
   color: grey !important;
   font-family: 'Nunito';
   font-style: normal;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 12px !important;
   line-height: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .newShinyButton:hover {
   background-color: #f9d749 !important;
@@ -230,6 +235,8 @@ code {
   background-image: url('/bomb3.png');
 }
 
-.dooNsH{
-  margin-top: 0  !important;
+.dooNsH {
+  margin-top: 0 !important;
 }
+
+
