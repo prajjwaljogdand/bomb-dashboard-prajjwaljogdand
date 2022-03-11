@@ -119,10 +119,10 @@ const Bonds = () => {
                       toTokenName="BOMB"
                       priceDesc={`${getDisplayBalance(bondBalance)} BBOND Available in wallet`}
                       onExchange={handleRedeemBonds}
-                      // disabled={!bondStat || bondBalance.eq(0) || !isBondRedeemable}
-                      disabled={false}
+                     disabled={!bondStat || bondBalance.eq(0) || !isBondRedeemable}
+                     // disabled={false}
                       disabledDescription={
-                        !isBondRedeemable ? `Enabled when 10,000 BOMB > ${BOND_REDEEM_PRICE}BTC` : null
+                        !isBondRedeemable ? `Redeem Enabled when 10,000 BOMB > ${BOND_REDEEM_PRICE}BTC` : null
                       }
                     />
                   </Grid>

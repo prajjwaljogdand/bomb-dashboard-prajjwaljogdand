@@ -60,8 +60,7 @@ const BondAction: React.FC<ExchangeCardProps> = ({
   return (
     <Grid item md={6}>
       <StyledCardActions>
-        
-        {/* {approveStatus !== ApprovalState.APPROVED && !disabled ? (
+        {approveStatus !== ApprovalState.APPROVED && !disabled ? (
           <Button
             className="newShinyButton"
             disabled={approveStatus === ApprovalState.PENDING || approveStatus === ApprovalState.UNKNOWN}
@@ -69,16 +68,11 @@ const BondAction: React.FC<ExchangeCardProps> = ({
           >
             {`${action}`}
           </Button>
-        ) : ( */}
+        ) : 
 
-
-        {/*
-         ---------------------------------------------------------------------------------------
-             We Can check if wallet is approved for transaction and then only enable purchase
-             by comment outing above section
-         ---------------------------------------------------------------------------------------
-        */}
-
+      // Comment Above part to check purchase feature and reedem feature
+        
+        (
           <Button
             className={disabled ? 'newShinyButtonDisabled' : 'newShinyButton'}
             onClick={onPresent}
@@ -86,7 +80,7 @@ const BondAction: React.FC<ExchangeCardProps> = ({
           >
             {disabledDescription || action}
           </Button>
-        {/* // )} */}
+         )}
       </StyledCardActions>
     </Grid>
   );
