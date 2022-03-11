@@ -6,8 +6,8 @@ import useBombStats from '../../../hooks/useBombStats';
 import useBondStats from '../../../hooks/useBondStats';
 import usebShareStats from '../../../hooks/usebShareStats';
 import { roundAndFormatNumber } from '../../../0x';
-
-
+import TokenSymbol from '../../../components/TokenSymbol';
+import styled from 'styled-components';
 function createData(name, currentSupply, totalSupply, price, wallet) {
   return { name, currentSupply, totalSupply, price, wallet };
 }
@@ -80,8 +80,11 @@ export default function DataTable() {
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
-                ${row.name}
+              <TableCell component="th" scope="row" align="left">
+              <StyledIcon>
+                  <TokenSymbol symbol={row.name} size={30} />
+              </StyledIcon>
+                 <Styledspan>${row.name}</Styledspan>
               </TableCell>
               <TableCell align="right">{row.currentSupply}</TableCell>
               <TableCell align="right">{row.totalSupply}</TableCell>
@@ -104,4 +107,32 @@ export default function DataTable() {
     </TableContainer>
   );
 }
+
+const StyledIcon = styled.span`
+  background-color: #363746;
+  font-size: 36px;
+  height: 32px;
+  width: 32px;
+  border-radius: 95px;
+  align-items: center;
+  display : flex;
+  text-align :  center;
+  justify-content: center;
+  padding : 0;
+  margin : 0;
+  margin-right : 5px ;
+  position : relative;
+  top :  10px;
+`;
+
+
+const Styledspan = styled.span`
+display : inline-block;
+position : relative;
+top: -16px;
+left : 40px;
+
+`;
+
+
 
