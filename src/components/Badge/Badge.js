@@ -7,6 +7,7 @@ const Badge = (props) => {
 
 const Rect = styled.span`
   background: rgba(0, 232, 162, 0.5);
+  margin-left : 10px;
   border-radius: 3px;
   font-size: 5px;
   width: 101px;

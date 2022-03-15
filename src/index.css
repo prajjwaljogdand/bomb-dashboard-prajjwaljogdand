@@ -239,4 +239,31 @@ code {
   margin-top: 0 !important;
 }
 
+th {
+  max-width: 125px;
+  min-width: 125px;
+  padding: 10px !important;
+  overflow-x: auto;
+  white-space: nowrap;
+}
 
+td {
+  height: 70px !important;
+  padding: 10px !important;
+}
+tr {
+  height: 50px !important;
+}
+.DataTable {
+  overflow-x: auto !important;
+  margin: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 800px) {
+  .SummaryConatiner {
+    width: 90vw !important;
+    margin: auto !important;
+  }
+}

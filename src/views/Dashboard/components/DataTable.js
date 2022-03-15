@@ -10,14 +10,11 @@ import TokenSymbol from '../../../components/TokenSymbol';
 import styled from 'styled-components';
 
 //util function to manage token data in array
-const createData = (name, currentSupply, totalSupply, price, wallet)=> {
+const createData = (name, currentSupply, totalSupply, price, wallet) => {
   return { name, currentSupply, totalSupply, price, wallet };
-}
+};
 
-
-
- const DataTable = ()=> {
-
+const DataTable = () => {
   const bombStats = useBombStats();
   const bShareStats = usebShareStats();
   const tBondStats = useBondStats();
@@ -31,20 +28,29 @@ const createData = (name, currentSupply, totalSupply, price, wallet)=> {
   const bombCirculatingSupply = useMemo(() => (bombStats ? String(bombStats.circulatingSupply) : null), [bombStats]);
   const bombTotalSupply = useMemo(() => (bombStats ? String(bombStats.totalSupply) : null), [bombStats]);
 
-
   //BSHARE DATA
-  const bSharePriceInDollars = useMemo( () => (bShareStats ? Number(bShareStats.priceInDollars).toFixed(2) : null),[bShareStats],);
-  const bShareCirculatingSupply = useMemo( () => (bShareStats ? String(bShareStats.circulatingSupply) : null),[bShareStats],);
+  const bSharePriceInDollars = useMemo(
+    () => (bShareStats ? Number(bShareStats.priceInDollars).toFixed(2) : null),
+    [bShareStats],
+  );
+  const bShareCirculatingSupply = useMemo(
+    () => (bShareStats ? String(bShareStats.circulatingSupply) : null),
+    [bShareStats],
+  );
   const bShareTotalSupply = useMemo(() => (bShareStats ? String(bShareStats.totalSupply) : null), [bShareStats]);
 
-
   //BBOND DATA
-  const tBondPriceInDollars = useMemo( () => (tBondStats ? Number(tBondStats.priceInDollars).toFixed(2) : null), [tBondStats],);
-  const tBondCirculatingSupply = useMemo(() => (tBondStats ? String(tBondStats.circulatingSupply) : null),[tBondStats],);
+  const tBondPriceInDollars = useMemo(
+    () => (tBondStats ? Number(tBondStats.priceInDollars).toFixed(2) : null),
+    [tBondStats],
+  );
+  const tBondCirculatingSupply = useMemo(
+    () => (tBondStats ? String(tBondStats.circulatingSupply) : null),
+    [tBondStats],
+  );
   const tBondTotalSupply = useMemo(() => (tBondStats ? String(tBondStats.totalSupply) : null), [tBondStats]);
- 
 
-  // Storing Data of Token in Array for easy iterations 
+  // Storing Data of Token in Array for easy iterations
   const rows = [
     createData(
       'BOMB',
@@ -70,8 +76,8 @@ const createData = (name, currentSupply, totalSupply, price, wallet)=> {
   ];
 
   return (
-    <TableContainer>
-      <Table sx={{ minWidth: 100 }} aria-label="simple table">
+    <TableContainer className="DataTable">
+      <Table sx={{ maxWidth: 10 }}>
         <TableHead>
           <TableRow>
             <TableCell> </TableCell>
@@ -94,13 +100,11 @@ const createData = (name, currentSupply, totalSupply, price, wallet)=> {
               <TableCell align="right">{row.totalSupply}</TableCell>
               <TableCell align="right">${row.price}</TableCell>
               <TableCell align="right">
-                {' '}
                 <Button
                   onClick={() => {
                     bombFinance.watchAssetInMetamask(row.name);
                   }}
                 >
-                  {' '}
                   <b>+</b>&nbsp;&nbsp;
                   <img alt="metamask fox" style={{ width: '20px' }} src={MetamaskFox} />
                 </Button>
@@ -111,7 +115,7 @@ const createData = (name, currentSupply, totalSupply, price, wallet)=> {
       </Table>
     </TableContainer>
   );
-}
+};
 
 const StyledIcon = styled.span`
   background-color: #363746;

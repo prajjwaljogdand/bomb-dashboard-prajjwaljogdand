@@ -3,25 +3,23 @@ import React from 'react';
 import DataTable from './DataTable';
 import styled from 'styled-components';
 import EpochData from './EpochData';
-const BombFinanceSummary = ()=> {
-
+const BombFinanceSummary = () => {
   return (
-    <StyledPaper>
+    <StyledPaper className="SummaryConatiner">
       <div style={{ textAlign: 'center', borderBottom: '0.5px solid grey', paddingBottom: '10px' }}>
         Bomb Finance Summary
       </div>
       <Grid container spacing={2}>
-        <Grid item md={8}>
+        <Grid item md={8} xs={12}>
           <DataTable />
         </Grid>
-        <Grid item md={4}>
+        <Grid item md={4} xs={12}>
           <EpochData />
         </Grid>
       </Grid>
     </StyledPaper>
   );
-  
-}
+};
 const StyledPaper = styled.div`
   width: 100%;
   background: rgba(35, 40, 75, 0.75);

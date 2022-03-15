@@ -10,9 +10,13 @@ import { Grid } from '@material-ui/core';
 import styled from 'styled-components';
 
 import ButtonBundle from './components/ButtonBundle';
+import Farm from './components/Farms';
+
+
 
 const Dashboard = () => {
   const { account } = useWallet();
+  
   return (
     <>
       <Switch>
@@ -28,6 +32,9 @@ const Dashboard = () => {
               </Grid>
               <Grid item md={4}>
                 <StyledPaper>Latest News</StyledPaper>
+              </Grid>
+              <Grid item md={12}>
+              <Farm />
               </Grid>
               <Grid item md={12}>
                 <Bonds />
