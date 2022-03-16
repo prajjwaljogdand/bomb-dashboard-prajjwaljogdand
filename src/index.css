@@ -16,7 +16,7 @@ h4 {
 html,
 body {
   overflow-y: auto;
-  overflow-x: hidden;
+
   height: 100%;
 }
 
@@ -248,7 +248,7 @@ th {
 }
 
 td {
-  height: 70px !important;
+  height: 50px !important;
   padding: 10px !important;
 }
 tr {
@@ -267,3 +267,6 @@ tr {
     margin: auto !important;
   }
 }
+
+
+

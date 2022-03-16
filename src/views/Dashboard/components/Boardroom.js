@@ -82,14 +82,12 @@ const Boardroom = () => {
   return (
     <Box>
       <StyledPaper>
-      
-        <Grid container md={12} spacing={0}>
-
+        <Grid container md={12} spacing={2}>
           {/* Title Section */}
           <Grid item md={1}>
             <TokenSymbol symbol={'BSHARE'} size={55} />
           </Grid>
-          <Grid item md={7}>
+          <Grid item sm={7} xs={12}>
             <Title>
               Boardroom <Badge text="Recommended" />{' '}
             </Title>
@@ -98,8 +96,8 @@ const Boardroom = () => {
 
           {/* BoardRoom Data Section */}
           <Grid item md={4}>
-            <PriceDiv>TVL : ${TVL}</PriceDiv>
-            <PriceDiv>
+            <PriceDiv className="leftAlign">TVL : ${TVL}</PriceDiv>
+            <PriceDiv className="leftAlign">
               Total staked:{roundAndFormatNumber(getDisplayBalance(totalStaked), 2)}{' '}
               <TokenSymbol symbol={'BSHARE'} size={15} />
             </PriceDiv>
@@ -109,26 +107,26 @@ const Boardroom = () => {
         <DividerLine />
         <Spacer size="md" />
 
-        <Grid container spacing={2}>
-          <Grid item md={3}>
+        <Grid container spacing={2} className="boardroomContainer">
+          <Grid item md={3} sm={6} xs={12}>
             <SubTitle>Annual percentage rate (APR) </SubTitle>
             <Title>{boardroomAPR.toFixed(2)}%</Title>
           </Grid>
-          <Grid item md={2}>
+          <Grid item md={2} sm={3} xs={6}>
             <SubTitle>Your Stake</SubTitle>
             <Title>
               <Title>{getDisplayBalance(stakedBalance)}</Title>
               <SubTitle>{`≈ $${tokenPriceInDollars}`}</SubTitle>
             </Title>
           </Grid>
-          <Grid item md={2}>
+          <Grid item md={2} sm={3} xs={6}>
             <SubTitle>Earned</SubTitle>
             <Title>{getDisplayBalance(earnings)}</Title>
             <SubTitle>{`≈ $${earnedInDollars}`}</SubTitle>
           </Grid>
 
           {/* Withdraw deposit and claim reward section */}
-          <Grid item md={5}>
+          <Grid item md={5} xs={12}>
             <StyledCardActions>
               <Button className={'newShinyButton'} disabled={!canWithdrawFromBoardroom} onClick={onPresentWithdraw}>
                 Withdraw
@@ -148,14 +146,12 @@ const Boardroom = () => {
             </StyledCardActions>
           </Grid>
         </Grid>
-
       </StyledPaper>
     </Box>
   );
 };
 
 const StyledPaper = styled.div`
-  max-width: 800px;
   background: rgba(35, 40, 75, 0.75);
   border: 1px solid #728cdf;
   box-sizing: border-box;
@@ -189,6 +185,9 @@ const PriceDiv = styled.div`
   text-align: right;
   width: 100%;
   margin-top: 3px;
+  @media only screen and (max-width: 731px) {
+    text-align: left !important;
+  }
 `;
 
 const DividerLine = styled.div`

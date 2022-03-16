@@ -1,12 +1,11 @@
 import React from 'react';
-import { Box, Grid } from '@material-ui/core';
+import {Grid } from '@material-ui/core';
 import styled from 'styled-components';
 import Spacer from '../../../components/Spacer';
 import TokenFarm from './TokenFarm';
 
 const Farms = () => {
   return (
-    <Box>
       <StyledPaper>
         <Grid container md={12} spacing={0}>
           {/* Title Section */}
@@ -20,12 +19,12 @@ const Farms = () => {
         <TokenFarm pair="BshareBnbLPBShareRewardPool" farm="BSHARE-BNB" />
         <TokenFarm pair="BombBshareLPBShareRewardPool" farm="BOMB-BSHARE" />
       </StyledPaper>
-    </Box>
+
   );
 };
 
 const StyledPaper = styled.div`
-  max-width: 100%;
+  width: 100%;
   background: rgba(35, 40, 75, 0.75);
   border: 1px solid #728cdf;
   box-sizing: border-box;

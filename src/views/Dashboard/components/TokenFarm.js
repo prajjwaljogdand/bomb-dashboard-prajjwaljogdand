@@ -3,7 +3,6 @@ import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import TokenSymbol from '../../../components/TokenSymbol';
 import { getDisplayBalance } from '../../../utils/formatBalance';
-import useStakedTokenPriceInDollars from '../../../hooks/useStakedTokenPriceInDollars';
 import useClaimRewardCheck from '../../../hooks/boardroom/useClaimRewardCheck';
 import useModal from '../../../hooks/useModal';
 import useTokenBalance from '../../../hooks/useTokenBalance';
@@ -39,12 +38,7 @@ const TokenFarm = (props) => {
   const earnedInDollars = (Number(tokenPriceInDollars) * Number(getDisplayBalance(earning))).toFixed(2);
   const tokenBalance2 = useTokenBalance(bank.depositToken);
   const stakedBalance2 = useStakedBalance(bank.contract, bank.poolId);
-  const stakedTokenPriceInDollars2 = useStakedTokenPriceInDollars(bank.depositTokenName, bank.depositToken);
 
-  const totalStakedtokenPriceInDollars = useMemo(
-    () => (stakedTokenPriceInDollars2 ? stakedTokenPriceInDollars2 : null),
-    [stakedTokenPriceInDollars2],
-  );
   const earnedStakedTokenInDollars = (
     Number(tokenPriceInDollars) * Number(getDisplayBalance(stakedBalance2, bank.depositToken.decimal))
   ).toFixed(2);
@@ -82,7 +76,7 @@ const TokenFarm = (props) => {
     <StyledBox style={{ border: '1px solid #728cdf' }}>
       <Grid container md={12} spacing={1}>
         {/* Title Section */}
-        <Grid item md={0.5}>
+        <Grid item md={1}>
           <TokenSymbol symbol={bank.depositToken.symbol} size={30} />
         </Grid>
         <Grid item md={7}>
@@ -99,11 +93,11 @@ const TokenFarm = (props) => {
       </Grid>
       <DividerLine />
       <Grid container spacing={2}>
-        <Grid item md={2}>
+        <Grid item md={2} xs={6} sm={4}>
           <SubTitle>Daily Returns </SubTitle>
           <Title>{bank.closedForStaking ? '0.00' : statsOnPool?.dailyAPR}%</Title>
         </Grid>
-        <Grid item md={2}>
+        <Grid item md={2} xs={6} sm={4}>
           <SubTitle>Your Stake</SubTitle>
           <Title>
             <Title>
@@ -113,7 +107,7 @@ const TokenFarm = (props) => {
             <SubTitle>{`≈ $${earnedStakedTokenInDollars}`}</SubTitle>
           </Title>
         </Grid>
-        <Grid item md={2}>
+        <Grid item md={2} xs={6} sm={4}>
           <SubTitle>Earned</SubTitle>
           <Title>
             {' '}
@@ -125,33 +119,40 @@ const TokenFarm = (props) => {
         </Grid>
 
         {/* Withdraw deposit and claim reward section */}
-        <Grid item md={6}>
+        <Grid item md={6} xs={12}>
           <StyledCardActions>
-            <Button
-              style={{ margin: '10px' }}
-              className={'newShinyButton'}
-              disabled={bank.closedForStaking}
-              onClick={() => (bank.closedForStaking ? null : onPresentWithdraw())}
-            >
-              Withdraw
-            </Button>
-            <Button
-              style={{ margin: '10px' }}
-              disabled={bank.closedForStaking}
-              onClick={() => (bank.closedForStaking ? null : onPresentDeposit())}
-              className={'newShinyButton'}
-            >
-              Deposit
-            </Button>
-
-            <Button
-              style={{ margin: '10px' }}
-              onClick={onReward}
-              className={earning.eq(0) || !canClaimReward ? 'newShinyButtonDisabled' : 'newShinyButton'}
-              disabled={earning.eq(0) || !canClaimReward}
-            >
-              Claim Reward
-            </Button>
+            <Grid container spacing={2}>
+              <Grid item sm={4} xs={6}>
+                <Button
+                  style={{ width: '100%' }}
+                  className={'newShinyButton'}
+                  disabled={bank.closedForStaking}
+                  onClick={() => (bank.closedForStaking ? null : onPresentWithdraw())}
+                >
+                  Withdraw
+                </Button>
+              </Grid>
+              <Grid item sm={4} xs={6}>
+                <Button
+                  style={{ width: '100%' }}
+                  disabled={bank.closedForStaking}
+                  onClick={() => (bank.closedForStaking ? null : onPresentDeposit())}
+                  className={'newShinyButton'}
+                >
+                  Deposit
+                </Button>
+              </Grid>
+              <Grid item sm={4} xs={12}>
+                <Button
+                  style={{ width: '100%' }}
+                  onClick={onReward}
+                  className={earning.eq(0) || !canClaimReward ? 'newShinyButtonDisabled' : 'newShinyButton'}
+                  disabled={earning.eq(0) || !canClaimReward}
+                >
+                  Claim Reward
+                </Button>
+              </Grid>
+            </Grid>
           </StyledCardActions>
         </Grid>
       </Grid>
@@ -160,7 +161,7 @@ const TokenFarm = (props) => {
 };
 
 const StyledBox = styled.div`
-  max-width: 100%;
+  width: 100%;
   background: rgba(35, 40, 75, 0.75);
   border: 1px solid #728cdf;
   box-sizing: border-box;

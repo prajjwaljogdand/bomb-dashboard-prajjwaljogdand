@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {Grid } from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
@@ -7,8 +6,8 @@ import { ReactComponent as IconDiscord } from '../../../assets/img/discord.svg';
 const ButtonBundle = () => {
   return (
     <StyledPaper>
-      <Grid container spacing={1} sx={{ justifyContent: 'space-between' }} md={12}>
-        <Grid item md={12}>
+      <Grid container spacing={1} sx={{ justifyContent: 'space-between' }} xs={12}>
+        <Grid item xs={12}>
           <StyledLink
             href="/"
             style={{
@@ -23,7 +22,7 @@ const ButtonBundle = () => {
         </Grid>
 
         {/* Discord */}
-        <Grid item md={6}>
+        <Grid item xs={6}>
           <StyledLink href="http://discord.bomb.money/" rel="noopener noreferrer" target="_blank">
             <IconDiscord style={{ fill: '#dddfee', height: '20px', position: 'relative', top: '5px' }} />
             Chat on Discord
@@ -31,9 +30,9 @@ const ButtonBundle = () => {
         </Grid>
 
         {/* Read Docs */}
-        <Grid item md={6}>
+        <Grid item xs={6}>
           <StyledLink href="https://docs.bomb.money/welcome-start-here/readme" rel="noopener noreferrer" target="_blank">
-            <FontAwesomeIcon icon="fa-solid fa-file-lines" />
+         
             Read Docs
           </StyledLink>
         </Grid>
@@ -61,7 +60,6 @@ const StyledLink = styled.a`
   line-height: 25px;
 `;
 const StyledPaper = styled.div`
-  max-width: 800px;
   box-sizing: border-box;
   color: white;
   margin-bottom: 10px;
