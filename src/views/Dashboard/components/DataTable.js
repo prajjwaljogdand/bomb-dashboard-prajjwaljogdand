@@ -77,7 +77,7 @@ const DataTable = () => {
 
   return (
     <TableContainer className="DataTable">
-      <Table sx={{ maxWidth: 10 }}>
+      <Table>
         <TableHead>
           <TableRow>
             <TableCell> </TableCell>

@@ -240,19 +240,19 @@ code {
 }
 
 th {
-  max-width: 125px;
-  min-width: 125px;
+  max-width: 110px;
+  min-width: 110px;
   padding: 10px !important;
   overflow-x: auto;
   white-space: nowrap;
 }
 
 td {
-  height: 50px !important;
+  height: 65px !important;
   padding: 10px !important;
 }
 tr {
-  height: 50px !important;
+  height: 65px !important;
 }
 .DataTable {
   overflow-x: auto !important;
@@ -267,6 +267,8 @@ tr {
     margin: auto !important;
   }
 }
+
+
 
 
 

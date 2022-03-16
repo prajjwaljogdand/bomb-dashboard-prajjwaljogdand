@@ -3,6 +3,7 @@ import React from 'react';
 import DataTable from './DataTable';
 import styled from 'styled-components';
 import EpochData from './EpochData';
+import WalletSummary from './WalletSummary';
 const BombFinanceSummary = () => {
   return (
     <StyledPaper className="SummaryConatiner">
@@ -10,11 +11,14 @@ const BombFinanceSummary = () => {
         Bomb Finance Summary
       </div>
       <Grid container spacing={2}>
-        <Grid item md={8} xs={12}>
+        <Grid item md={7} xs={12}>
           <DataTable />
         </Grid>
-        <Grid item md={4} xs={12}>
+        <Grid item md={2} xs={12}>
           <EpochData />
+        </Grid>
+        <Grid item md={3} xs={12}>
+          <WalletSummary />
         </Grid>
       </Grid>
     </StyledPaper>

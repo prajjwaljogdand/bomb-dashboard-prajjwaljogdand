@@ -12,6 +12,7 @@ import DashboardBG from '../../assets/img/dashboard-bg.png';
 import ButtonBundle from './components/ButtonBundle';
 import Farm from './components/Farms';
 import { createGlobalStyle } from 'styled-components';
+import WalletSummary from './components/WalletSummary';
 
 
 const Dashboard = () => {
@@ -32,7 +33,7 @@ const Dashboard = () => {
                 <Boardroom />
               </Grid>
               <Grid item md={4} xs={12}>
-                <StyledPaper>Latest News</StyledPaper>
+                <StyledPaper>Latest News </StyledPaper>
               </Grid>
               <Grid item xs={12}>
               <Farm />
